@@ -8,7 +8,8 @@ COPY ./package.json ./
 RUN npm install --production
 COPY . ./
 
-RUN npm run build
+# RUN npm run build
+# we use locally-builded app
 
 FROM nginx:latest
 COPY --from=builder /app/build /usr/share/nginx/html
