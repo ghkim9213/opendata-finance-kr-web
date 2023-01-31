@@ -3,9 +3,9 @@ FROM node:lts-alpine as builder
 ENV NODE_ENV production
 
 ADD . .
-RUN \
-  npm install --production && \
-  npm run build
+RUN npm install --production
+
+CMD ["npm", "run", "build"]
 
 FROM nginx:latest
 COPY --from=builder ./build /usr/share/nginx/html
