@@ -1,4 +1,8 @@
-FROM node:lts-alpine as builder
+# FROM node:lts-alpine as builder
+FROM node as builder
+# versioned node works in local test
+# it triggers stucking on npm run build in ec2
+
 ENV NODE_ENV production
 
 ADD . .
