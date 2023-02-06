@@ -1,17 +1,22 @@
-import { marked } from 'marked';
 import { useEffect, useState } from 'react';
 import { fetchData } from '../utils/fetchData';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import 'github-markdown-css';
+import rehypeRaw from 'rehype-raw';
 
 const Home = () => {
   const [md, setMd] = useState<string>('');
   useEffect(() => {
     fetchData('readme.md')
-      .then(data => setMd(marked.parse(data)))
+      .then(data => setMd(data))
   }, [md])
   return (
-    <div className='container py-3'>
-      <div dangerouslySetInnerHTML={{__html: md}}></div>
-    </div>
+    <ReactMarkdown
+      className='markdown-body'
+      children={md}
+      rehypePlugins={[rehypeRaw]}
+    />
   )
 }
 

@@ -27,6 +27,7 @@ export const VariableList = (props: any) => {
                   className='btn btn-link m-0 p-0'
                   data-bs-toggle='modal'
                   data-bs-target='#'
+                  disabled
                 ><i className='bi bi-file-text'/></button>
               </td>
               <td><a href={d.download_url}><i className='bi bi-download'/></a></td>

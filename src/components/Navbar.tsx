@@ -12,9 +12,9 @@ const Navbar = () => {
           </button>
           <div className='collapse navbar-collapse' id='navbarNavDropdown'>
             <ul className='navbar-nav'>
-              <li className='navbar-item'><Link className='nav-link' to="/apidoc">API</Link></li>
-              <li className='navbar-item'><Link className='nav-link disabled' to="/examples">Examples</Link></li>
-              <li className='navbar-item'><Link className='nav-link' to="/datasets">Datasets</Link></li>
+              <li className='navbar-item'><Link className='nav-link' to="/documentations">DOCUMENTATION</Link></li>
+              <li className='navbar-item'><Link className='nav-link' to="/datasets">DATASETS</Link></li>
+              <li className='navbar-item'><Link className='nav-link disabled' to="/labs">LABS</Link></li>
             </ul>
           </div>
         </div>
